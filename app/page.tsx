@@ -1,3 +1,5 @@
+"use client";
+
 export default function HomePage() {
   return (
     <div className="px-6 py-10">
