@@ -60,15 +60,6 @@ button {
   background: rgba(255, 255, 255, 0.22);
 }
 
-/* ---------- Utility helpers ---------- */
-.container-page {
-  @apply max-w-4xl mx-auto;
-}
-
-.card {
-  @apply rounded-2xl border border-neutral-800 bg-neutral-950;
-}
-
 /* ---------- Reduce motion (accessibility) ---------- */
 @media (prefers-reduced-motion: reduce) {
   * {
