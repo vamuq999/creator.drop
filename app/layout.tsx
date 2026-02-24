@@ -12,32 +12,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white antialiased">
-        <div className="min-h-screen flex flex-col">
+    <html lang="en" className="bg-black">
+      <body className="min-h-screen bg-gradient-to-b from-black via-neutral-950 to-black text-neutral-100 antialiased font-sans">
+        <div className="flex min-h-screen flex-col">
+
           {/* Header */}
-          <header className="border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
-            <h1 className="text-xl font-semibold tracking-wide">
-              CreatorDrop
-            </h1>
-            <nav className="space-x-6 text-sm text-neutral-400">
-              <a href="#" className="hover:text-white transition">
-                Explore
-              </a>
-              <a href="#" className="hover:text-white transition">
-                Upload
-              </a>
-              <a href="#" className="hover:text-white transition">
-                Connect
-              </a>
-            </nav>
+          <header className="sticky top-0 z-50 backdrop-blur-md bg-black/60 border-b border-neutral-800">
+            <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+              <h1 className="text-xl font-semibold tracking-wide text-white">
+                CreatorDrop
+              </h1>
+
+              <nav className="hidden md:flex gap-8 text-sm text-neutral-400">
+                <a href="#explore" className="hover:text-white transition">
+                  Explore
+                </a>
+                <a href="#upload" className="hover:text-white transition">
+                  Upload
+                </a>
+                <a href="#connect" className="hover:text-white transition">
+                  Connect
+                </a>
+              </nav>
+            </div>
           </header>
 
-          {/* Main Content */}
+          {/* Page */}
           <main className="flex-1">{children}</main>
 
           {/* Footer */}
-          <footer className="border-t border-neutral-800 px-6 py-6 text-xs text-neutral-500 text-center">
+          <footer className="border-t border-neutral-800 py-6 text-xs text-neutral-500 text-center">
             © {new Date().getFullYear()} CreatorDrop — Built for digital sovereignty.
           </footer>
         </div>
