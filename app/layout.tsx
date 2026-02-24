@@ -1,62 +1,44 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "CreatorDrop",
-  description: "CreatorDrop — ship your drops, own your distribution.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  description: "Digital ownership. Music. Art. Code. On-chain.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>
-        <div className="appShell">
-          <header className="topBar">
-            <div className="container topBarInner">
-              <div className="brand">
-                <div className="brandMark" aria-hidden="true" />
-                <div className="brandText">
-                  <div className="brandName">CreatorDrop</div>
-                  <div className="brandTag">Drops. Discovery. Staking.</div>
-                </div>
-              </div>
-
-              <nav className="nav">
-                <a className="navLink" href="#drop">Drop</a>
-                <a className="navLink" href="#discover">Discover</a>
-                <a className="navLink" href="#stake">Stake</a>
-              </nav>
-
-              <div className="actions">
-                <button className="btn btnGhost" type="button">
-                  Docs
-                </button>
-                <button className="btn btnPrimary" type="button">
-                  Connect Wallet
-                </button>
-              </div>
-            </div>
+    <html lang="en">
+      <body className="bg-black text-white antialiased">
+        <div className="min-h-screen flex flex-col">
+          {/* Header */}
+          <header className="border-b border-neutral-800 px-6 py-4 flex items-center justify-between">
+            <h1 className="text-xl font-semibold tracking-wide">
+              CreatorDrop
+            </h1>
+            <nav className="space-x-6 text-sm text-neutral-400">
+              <a href="#" className="hover:text-white transition">
+                Explore
+              </a>
+              <a href="#" className="hover:text-white transition">
+                Upload
+              </a>
+              <a href="#" className="hover:text-white transition">
+                Connect
+              </a>
+            </nav>
           </header>
 
-          <main className="main">
-            <div className="container">{children}</div>
-          </main>
+          {/* Main Content */}
+          <main className="flex-1">{children}</main>
 
-          <footer className="footer">
-            <div className="container footerInner">
-              <div className="muted">
-                © {new Date().getFullYear()} CreatorDrop. Built to ship.
-              </div>
-              <div className="footerLinks">
-                <a className="footerLink" href="#privacy">Privacy</a>
-                <a className="footerLink" href="#terms">Terms</a>
-                <a className="footerLink" href="#support">Support</a>
-              </div>
-            </div>
+          {/* Footer */}
+          <footer className="border-t border-neutral-800 px-6 py-6 text-xs text-neutral-500 text-center">
+            © {new Date().getFullYear()} CreatorDrop — Built for digital sovereignty.
           </footer>
         </div>
       </body>
